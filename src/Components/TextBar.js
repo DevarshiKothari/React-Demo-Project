@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
  
-export default function TextBar() {
+export default function TextBar(props) {
     const [text, setText] = useState('');
     //setText
 
@@ -13,7 +13,7 @@ export default function TextBar() {
     const handleLC = ()=>{
         let str=text.toLowerCase()
         setText(str)
-    }
+    }   
 
     const handleClear = ()=>{
         //let str=text.toLowerCase()
@@ -44,7 +44,7 @@ export default function TextBar() {
             <button type="button" className="btn btn-primary mx-3" onClick={handleClear}>Clear Text</button>
             {/* <button type="button" className="btn btn-primary mx-3" onClick={handleAlternatingCaps}>Alternating Caps</button> */}
         </div>
-        <div  className='container-my-3'>
+        <div className='container-my-3'>
             <h2>Summary</h2>
             <p>Total Characters = {text.length} and Total Words = {text.split(' ').length}</p>
         </div>
