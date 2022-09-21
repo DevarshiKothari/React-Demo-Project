@@ -38,7 +38,7 @@ export default function TextBar(props) {
     <>
         <div className='container'>
             <div className='my-3'>
-                <textarea className="form-control" value={text} id="exampleFormControlTextarea1" rows="8" onChange={handleChange}></textarea>
+                <textarea className={`form-control bg-${props.theme} text-${props.textColor}`} value={text} id="exampleFormControlTextarea1" rows="8" onChange={handleChange}></textarea>
             </div>
             <button type="button" className="btn btn-primary" onClick={handleLC}>To lowercase</button>
             <button type="button" className="btn btn-primary mx-3" onClick={handleClear}>Clear Text</button>
@@ -51,3 +51,4 @@ export default function TextBar(props) {
     </>
   )
 }
+// {`form-control bg-${props.textColor} value={text}`}

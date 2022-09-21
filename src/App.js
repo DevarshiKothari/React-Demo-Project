@@ -8,6 +8,7 @@ function App() {
 
   const [theme, setTheme] = useState('white')
 
+  const [textColor, setTextColor] = useState('black')
   // const [style, setStyle] = useState({
   //   color: 'white',
   //   backgroundColor: 'dark'
@@ -32,10 +33,12 @@ function App() {
       const changeTheme=()=>{
         if(theme==='white'){
           document.body.style.backgroundColor='black';
+          setTextColor('white');
           setTheme('black')
         }
         else{ 
           document.body.style.backgroundColor='white';
+          setTextColor('black');
           setTheme('white')
         }
       }
@@ -43,9 +46,9 @@ function App() {
   return (
     <>
     <NavBar title='Pehela App'  changeTheme={changeTheme}/>
-    <div className="container" >
+    <div className={`container text-${textColor}`} >
       <h1>Enter text here</h1>
-      <TextBar changeTheme={changeTheme}/>
+      <TextBar changeTheme={changeTheme} textColor={textColor} theme={theme}/>
     </div>
     {/* <AboutUs/> */}
     </>
